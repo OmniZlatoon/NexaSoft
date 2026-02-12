@@ -1,9 +1,9 @@
 const { createClient } = require('redis');
-
+require('dotenv').config(); // Load environment variables from .env file
 // Create the client
 const redisClient = createClient({
 // use the url from the .env file
-    url: "rediss://default:ATavAAIncDI4YzU1ZmVjZTQyN2U0MDBhOGM4MDdkMmMzYWM5MDFiNnAyMTM5OTk@flexible-escargot-13999.upstash.io:6379",
+    url: process.env.REDIS_URI,
     socket: {
         tls: true, // Crucial for Upstash
         reconnectStrategy: (retries) => Math.min(retries * 50, 500)
