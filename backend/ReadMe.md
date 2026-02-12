@@ -21,7 +21,7 @@ src/
 │   │   ├── user.service.js
 │   │   ├── user.repository.js
 │   │   └── user.schema.js     # Validation (zod/joi)
-│   │
+│   │   |__ user.verifyOTP.js
 │   ├── auth/
 │   │   ├── auth.routes.js
 │   │   ├── auth.controller.js

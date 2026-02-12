@@ -1,7 +1,7 @@
 require('dotenv').config()
-const { pool } = require('pg')
+const { Pool }  = require('pg')
 
-const db = new pool({
+const db = new Pool({
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     user: process.env.DB_USER,
