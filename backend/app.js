@@ -3,18 +3,18 @@ const userRoutes = require('./modules/user/user.routes');
 const db = require('./config/db');
 const redisClient= require('./Redis_config/Redis_setup');
 require('dotenv').config();
-const Port = process.env.PORT || 2000;
+const Port = process.env.PORT;
 const app = express();
 
 app.use(express.json());
 app.use('/nexasoft/users', userRoutes);
 
-// // Connect to the DB
-// db.connect().then(() => {
-//     console.log('Connected to the database');
-// }).catch((err) => {
-//     console.error('Database connection error:', err);
-// });
+// Connect to the DB
+db.connect().then(() => {
+    console.log(`Connected to the database to : ${process.env.DB_NAME} `);
+}).catch((err) => {
+    console.error('Database connection error:', err);
+});
 
 
 // Connect to the Redis Client

@@ -1,5 +1,5 @@
 const nodemailer = require('nodemailer');
-require('dotenv').config(); // Load environment variables from .env file
+require('dotenv').config();// Load environment variables from .env file
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -14,8 +14,8 @@ const SendOTPEmail = async (email, otp) => {
         from: `"NexaSoft System" <${transporter.options.auth.user}>`,
         to: email,
         subject: "Your Login OTP",
-        text: `Your OTP is ${otp}: . It will expire in 1 min seconds.`,
-        html: `<b>Your OTP is ${otp}: </b><p>It will expire in 1 min seconds.</p>`
+        text: `Your OTP is:  <b>${otp}</b> . It will expire in 1 min .`,
+        html: `Your OTP is:  <b>${otp}</b><p>It will expire in 1 min .</p>`
     };
 
     return transporter.sendMail(mailOptions);

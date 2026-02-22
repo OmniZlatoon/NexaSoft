@@ -1,6 +1,6 @@
+
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
-
   -- profile
   first_name TEXT NOT NULL,
   last_name TEXT NOT NULL,
