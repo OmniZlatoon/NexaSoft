@@ -14,9 +14,10 @@ const SendOTPEmail = async (email, otp) => {
         from: `"NexaSoft System" <${transporter.options.auth.user}>`,
         to: email,
         subject: "Your Login OTP",
-        text: `Your OTP is:  <b>${otp}</b> . It will expire in 1 min .`,
+        text: `Your OTP is:  <b>${otp} </b> . It will expire in 1 min .`,
         html: `Your OTP is:  <b>${otp}</b><p>It will expire in 1 min .</p>`
     };
+    console.log(`<< OTP: ${otp} - ${email} >>:`); // Log the email and OTP for debugging
 
     return transporter.sendMail(mailOptions);
 };

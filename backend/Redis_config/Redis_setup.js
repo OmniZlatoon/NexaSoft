@@ -13,7 +13,8 @@ const redisClient = createClient({
 // Event listeners for monitoring
 redisClient.on('error', (err) => console.error('❌ Redis Client Error:', err));
 redisClient.on('connect', () => console.log('⏳ Connecting to Redis...'));
-redisClient.on('ready', () => console.log('✅ Redis is ready!'));
+redisClient.on('ready', () => console.log('Connection[Status]: Sucess✅ !\n-----------------------------------------------------\n<< [DEBUGGING SECTION [ACTIVE] >>'));
+
 
 // Function to initiate connection
 const connectRedis = async () => {

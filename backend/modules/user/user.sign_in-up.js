@@ -47,7 +47,6 @@ exports.login = async (req, res) => {
 
         // Create the OTP and store it in the RedisClient with an expiration time of 1 mins
         const otp = generateOTP();
-        console.log("<< OTP >>:", otp); // Log the generated OTP for debugging
         await redisClient.set(email, otp, 'EX', 60); // Store OTP with a 60-second expiration
         // Send the OTP to the user's email
         await SendOTPEmail(email, otp);
