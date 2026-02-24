@@ -2,7 +2,11 @@
 const fs= require('fs');
 const path = require('path');
 // 1. Force dotenv to look one folder up (in the backend root)
+
+
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
+
+
 // 2. Add a quick sanity check to prove it worked
 console.log("🛠️ Attempting to connect on port:", process.env.DB_PORT);
 const db = require('./db'); // import the db connection pool
